@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+}
+nav{
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 90px;
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+justify-content: space-between;
+align-items: center;
+top: 0;
+position: sticky;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+ul li{
+    /* padding-right: 30px; */
+    list-style: none;
+    padding-top: 10px;
+
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 720;
+    transition: all ease-in-out 0.5s;
+}
+ul li a:hover{
+    color: #F85606;
+}
+.first a{
+    text-decoration: none;
+    color: #F85606;
+    font-size: 30px;
+    font-weight: 720;
+}
+.third button{
+background-color: #F85606;
+color: white;
+transition: all ease-in-out 0.5s;
+}
+.third button:hover{
+    color: #F85606;
+    background-color: white;
+}
+#a{
+    color: #F85606;
+}
+#Home{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.left{
+    width: 50%;
+    height: 100%;
+    padding-top: 90px;
+}
+.left h1{
+    color: black;
+    font-weight: 760;
+    font-size: 50px;
+}
+#H-p{
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: 730;
+}
+.left button{
+    background-color: #F85606;
+    border: 2px solid black;
+    
+    color: white;
+    font-size: 30px;
+    font-weight: 740;
+    border: none;
+    outline: none;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    transition: all ease-in-out 0.5s;
+}
+.left button:hover{
+    background-color: #fff;
+    border: 2px solid black;
+    color:#F85606;
+    padding-right: 4px;
+    padding-left: 0px;
+}
+.right{
+    width: 50%;
+    height: 100%;
+padding-left: 10%;
+}
+#Shop{
+    width: 100%;
+    height: 100vh;
+}
+.main-h{
+    width: 100%;
+    height: 50px;
+    display: flex;
+   
+gap: 50px;
+}
+.dropdown{
+    padding-top: 50px;
+    padding-left: 80px;
+}
+#rt{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+#rt h1{
+color: #F85606;
+font-size: 40px;
+font-weight: 750;
+
+}
+.card img{
+    height: 300px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
