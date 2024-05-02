@@ -143,3 +143,35 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 }
+#line{
+    width: 500px;
+    height: 50px;
+    border: 4px solid #F85606;
+    border-radius: 20px;
+    display: flex;
+    padding-left: 18px;
+    padding-right: 18px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+}
+#imgj{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #F85606;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+#line h3{
+    color: #F85606;
+}
+#imgj img{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}

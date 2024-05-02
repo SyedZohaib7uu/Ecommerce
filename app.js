@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
 const carts = [
     // men
     { idx:1, id:10, title: 'Men1', gender:"men", img: "image.png", price: 190, dec: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer." },
@@ -43,7 +42,6 @@ const carts = [
     displayProduct(childcloth)
   })
   displayProduct(carts)
-})
   function displayProduct(pro){
     var clutter = "";
     pro.forEach(item=>{
@@ -75,6 +73,8 @@ const carts = [
     <br>
     <h4 style"color:red;">Rs.${item.price}</h4>
     <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal${item.id}">Details</button>
+    <button onclick="addNum('${item.idx}', '${item.img}', ${item.price}, '${item.title}')"  id="kmn" class="btn btn-primary">Purchase</button>
+         
       </div>
     </div>
 </div>
@@ -95,7 +95,7 @@ const carts = [
             <h5 class="card-title">${item.title}</h5>
             <p class="card-text">${item.dec}</p>
             <br>
-            <button class="btn btn-primary">Purchase</button>
+            <button onclick="addNum('${item.idx}', '${item.img}', ${item.price}, '${item.title}')"  id="kmn" class="btn btn-primary">Purchase</button>
           </div>
         </div>
       </div>
@@ -104,7 +104,66 @@ const carts = [
     })
     var row = document.getElementById("row").innerHTML=clutter
   }
+  var cart = []; // Initialize an empty array to store cart items
+var counter =0
+  function addNum(cardIndex, img,pri,ti) {
+      counter = counter + 1; // Increment counter
+      document.getElementById("jkl").innerHTML = counter; // Update counter display
+  
+      // Create a new item object for the cart
+      var addCart = {
+    img:img,
+    pri:pri,
+    ti:ti
+   }
+   cart = [
+    ...cart,addCart
+   ]
+   updateCartDisplay()
+  }
+ 
+  // Clear previous cart display
+  var cartContainer = document.getElementById("stored-cart");
+  cartContainer.innerHTML = "<h3>Your Cart Is Empty</h3>";
+  function updateCartDisplay() {
+  var totalAmount =0
+cartContainer.innerHTML=""
+  // Iterate over the cart array and display each item
+  cart.forEach(function(item) {
+    totalAmount = totalAmount+item.pri
+      var itemElement = document.createElement("div");
+      itemElement.innerHTML = `
+      
+      <br>
+      <div id="line">
+            <div id="imgj">
+                <img src="${item.img}" alt=""/>
 
+            </div>
+          <h3>${item.ti}</h3>
+          <h3>Rs.${item.pri}</h3>
+        </div>
+        
+        `;
+        cartContainer.appendChild(itemElement);
+      });
+      var totalElement = document.createElement("div");
+    totalElement.textContent = `Total Amount: Rs.${totalAmount}`;
+    cartContainer.appendChild(totalElement);
 
-     
-   
+    // Add payment button
+    var paymentButton = document.createElement("button");
+    paymentButton.textContent = "Payment";
+    paymentButton.className = "btn btn-danger bottom-0";
+    paymentButton.id = "mita";
+    paymentButton.onclick = function() {
+      counter=0
+      document.getElementById("jkl").innerHTML = counter;
+      // Call function to handle payment
+      cart = [];
+      // Update the cart display
+      updateCartDisplay();
+    };
+    cartContainer.appendChild(paymentButton);
+}
+ 
